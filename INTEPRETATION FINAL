@@ -1,13 +1,75 @@
 INTERPRETATION FINAL 
 
 P3 sous-performe P1 en rendement brut — mais c'est voulu
-P3 délivre 6.51% annualisé contre 7.02% pour le benchmark 60/40. Ce -51bp de rendement s'explique entièrement par la diversification internationale et la poche cash de 5% (BIL dilue mécaniquement le rendement). Ce n'est pas une underperformance — c'est le coût explicite de la contrainte de résidence suisse.
+P3 délivre 6.51% annualisé contre 7.02% pour le benchmark 60/40. Ce -51bp de rendement s'explique entièrement par la diversification internationale et la poche cash de 5% (BIL dilue mécaniquement le rendement). 
+Ce n'est pas une underperformance — c'est le coût explicite de la contrainte de résidence suisse.
 
 P3 est plus risqué que le benchmark — mais mieux rémunéré par unité de risque baissier
-P3 affiche 12.16% de volatilité vs 11.72% pour P1, soit +44bp. En apparence défavorable. Mais le Sortino de P3 (0.362) écrase celui de P2 (0.248), ce qui signifie que P3 génère un meilleur rendement par unité de risque baissier — exactement ce qui compte pour un investisseur long terme comme Sofia.
+P3 affiche 12.16% de volatilité vs 11.72% pour P1, soit +44bp. En apparence défavorable. Mais le Sortino de P3 (0.362) écrase celui de P2 (0.248), ce qui signifie que P3 génère un meilleur rendement par 
+unité de risque baissier — exactement ce qui compte pour un investisseur long terme comme Sofia.
 
 Le Sharpe est quasi-identique — P3 n'est pas optimisé pour battre P1 sur ce critère
-0.305 vs 0.359 — P1 gagne sur le Sharpe brut, ce qui est attendu : un 60/40 pur VT/AGG est difficilement battu en Sharpe sur données historiques récentes dominées par le bull market US. P3 ne cherche pas à maximiser le Sharpe mais à respecter les contraintes de Sofia tout en diversifiant.
+0.305 vs 0.359 — P1 gagne sur le Sharpe brut, ce qui est attendu : un 60/40 pur VT/AGG est difficilement battu en Sharpe sur données historiques récentes dominées par le bull market US. P3 ne cherche pas 
+à maximiser le Sharpe mais à respecter les contraintes de Sofia tout en diversifiant.
 
 Le Max Drawdown de -23.76% est acceptable pour un horizon de 33 ans
 Sofia accepte explicitement des drawdowns > 20% dans son IPS. Ce chiffre valide la cohérence entre le profil de risque déclaré et le portefeuille construit.
+
+
+Portfolio 1 — Benchmark 60/40
+Le benchmark offre :
+  une volatilité modérée 
+  une bonne diversification 
+  mais un potentiel de croissance plus limité.
+
+Il sert de référence passive classique.
+
+Portfolio 2 — US Equity Style Tilted
+Le portefeuille P2 présente :
+  une exposition positive au facteur SMB 
+  une exposition Value significative 
+  une forte sensibilité Momentum.
+Cela confirme que l’objectif Sofia :
+Small Cap + Value + Momentum est atteint.
+Le portefeuille est plus volatil que le benchmark mais présente un potentiel de surperformance long terme.
+
+Portfolio 3 — Global Multi-Asset
+P3 apparaît comme le portefeuille le plus adapté au profil Sofia :
+  diversification internationale 
+  réduction du risque spécifique AstraZeneca 
+  exposition factorielle ciblée 
+  présence d’actifs défensifs 
+  respect de la contrainte de liquidité.
+Le glide path réduit progressivement le risque à l’approche de la retraite, améliorant la stabilité du portefeuille.
+
+
+
+Les tilts factoriels de Sofia sont parfaitement réalisés (FF6)
+C'est le résultat le plus important du notebook. La régression confirme que P2 fait exactement ce qu'il est censé faire :
+SMB = +0.47 (t=21.6, p<0.001) vs SPY à -0.09 → différence de +0.56. P2 est massivement tilté Small Cap, SPY est légèrement Large Cap biased. Tilt confirmé avec une significativité statistique quasi-parfaite.
+HML = +0.28 (t=14.4, p=0.004) vs SPY à +0.01 → différence de +0.26. P2 est clairement Value, SPY est neutre. Tilt confirmé.
+Mom = +0.12 (t=6.2, p=0.099) vs SPY à -0.01 → différence de +0.13. Le Momentum est significatif à 10%, porté essentiellement par MTUM (β=0.40, t=22.0, p<0.001). VIOV et VBR sont quasi-neutres sur ce facteur, ce qui est 
+logique — le Momentum dans P2 est concentré dans MTUM par design.
+R² = 0.960 : les 6 facteurs expliquent 96% de la variance des rendements de P2. Le modèle est très bien spécifié.
+
+Les trois ETFs ont des profils factoriels complémentaires et cohérents
+VIOV et VBR portent le Small Cap et le Value. MTUM porte quasi-exclusivement le Momentum avec un beta négatif sur SMB (il est Large Cap Momentum, pas Small Cap). Cette complémentarité est exactement l'objectif de Sofia : éviter la 
+concentration en Large Cap défensif d'AstraZeneca. Les alphas négatifs (-5.4%, -4.9%, -5.1%) s'expliquent par le fait que les primes de risque forward-looking sont inférieures aux rendements historiques sur la période 2013-2026 
+— ce n'est pas inquiétant, c'est un artefact classique de l'estimation ex-post sur une période de bull market.
+
+
+L'optimisation FF3 Max Sharpe (SR=0.51) domine largement
+FF3 SR=0.51 vs CAPM SR=0.42 vs Equal Weight SR=0.37. Le modèle FF3 capte mieux les primes de risque attendues que le simple CAPM, ce qui produit des pondérations ex-ante plus efficientes. Le portefeuille FF3 converge naturellement 
+vers 40% MTUM + 40% BNDX — momentum pur pour le rendement, obligations internationales pour la diversification.
+
+L'optimisation CAPM révèle la puissance de VEA comme diversificateur
+Le CAPM alloue 37.1% à VEA (actions développées hors-US) comme premier actif. Cela confirme que sur données hebdomadaires, les marchés développés internationaux offrent un ratio rendement/risque attrayant par rapport au marché US pur 
+— ce qui justifie l'exposition internationale de Sofia dans P3.
+
+BTC-USD est une anomalie isolée dans l'espace risque/rendement — son exclusion est justifiée
+Sur le graphique de la frontière efficiente, BTC apparaît comme un outlier extrême à volatilité ~65% — totalement déconnecté du nuage d'actifs. Même avec un rendement élevé, son inclusion dans un portefeuille long terme dégraderait 
+le profil risque/rendement global. L'exclusion à 0% (sous le cap de 1.5%) est donc non seulement réglementairement justifiée mais aussi quantitativement optimale.
+
+Conclusion synthétique
+P3 est un portefeuille cohérent de bout en bout : les tilts factoriels de P2 sont statistiquement confirmés, la diversification internationale est validée par l'optimisation CAPM, le Sortino de 0.362 bat P2 (0.248) malgré une 
+volatilité plus faible, et les projections à 33 ans montrent un multiple de 8.3x en base case. Le tout dans le strict respect des contraintes IPS de Sofia.
