@@ -30,3 +30,32 @@ La logique de construction est cohérente sur trois niveaux :
 2. Diversification sectorielle et géographique — Healthcare (existant) + Luxe + Semis + expositions Europe/Asie via LVMH et ASML. L'univers plus large (NESN.SW, SIE.DE, ETF globaux) renforce encore cette dimension.
 
 3. Profil risque approprié — Sofia semble accepter une volatilité plus élevée que son portefeuille actuel (VIOV et MTUM sont explicitement présentés comme plus volatils qu'AstraZeneca), ce qui correspond à un profil croissance à horizon long terme, prêt à subir des drawdowns plus prononcés en échange de primes de rendement supplémentaires.
+
+
+
+POUR INTERPRETATION:
+Portfolio 1 — Benchmark 60/40
+Le benchmark offre :
+  une volatilité modérée 
+  une bonne diversification 
+  mais un potentiel de croissance plus limité.
+
+Il sert de référence passive classique.
+
+Portfolio 2 — US Equity Style Tilted
+Le portefeuille P2 présente :
+  une exposition positive au facteur SMB 
+  une exposition Value significative 
+  une forte sensibilité Momentum.
+Cela confirme que l’objectif Sofia :
+Small Cap + Value + Momentum est atteint.
+Le portefeuille est plus volatil que le benchmark mais présente un potentiel de surperformance long terme.
+
+Portfolio 3 — Global Multi-Asset
+P3 apparaît comme le portefeuille le plus adapté au profil Sofia :
+  diversification internationale 
+  réduction du risque spécifique AstraZeneca 
+  exposition factorielle ciblée 
+  présence d’actifs défensifs 
+  respect de la contrainte de liquidité.
+Le glide path réduit progressivement le risque à l’approche de la retraite, améliorant la stabilité du portefeuille.
